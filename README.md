@@ -5,6 +5,11 @@ Define : Value Network
 V - f(state)
 
 What is V?
+V = -1 black wins the board state
+V = 0 draw board state
+V = 1 white wins board state
+
+
 
 State(Board):
 
