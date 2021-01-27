@@ -37,3 +37,10 @@ Extra State:
 * To move
 
 8x8x4 +  1 = 257 bits(vector of 0 or 1)
+
+
+
+# Things to add
+- Yet to test the network against real players
+- Trained on only 100k games, will be training on more
+- Can add UI and other sparkly stuff
