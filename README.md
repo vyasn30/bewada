@@ -1,5 +1,11 @@
+# Neural chess
 * Establish the search tree
 * Use a neural net to prune the search tree
+ 
+# Parsing
+- We parse the board to a 8x8x5 bit vector
+
+# Notes
 
 Define : Value Network
 V - f(state)
