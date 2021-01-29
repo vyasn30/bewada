@@ -40,24 +40,24 @@ class Net(nn.Module):
     self.last = nn.Linear(128, 1)
 
   def forward(self, x):
-    x = F.tanh(self.a1(x))
-    x = F.tanh(self.a2(x))
-    x = F.tanh(self.a3(x))
+    x = F.relu(self.a1(x))
+    x = F.relu(self.a2(x))
+    x = F.relu(self.a3(x))
 
     # 4x4
-    x = F.tanh(self.b1(x))
-    x = F.tanh(self.b2(x))
-    x = F.tanh(self.b3(x))
+    x = F.relu(self.b1(x))
+    x = F.relu(self.b2(x))
+    x = F.relu(self.b3(x))
 
     # 2x2
-    x = F.tanh(self.c1(x))
-    x = F.tanh(self.c2(x))
-    x = F.tanh(self.c3(x))
+    x = F.relu(self.c1(x))
+    x = F.relu(self.c2(x))
+    x = F.relu(self.c3(x))
 
     # 1x128
-    x = F.tanh(self.d1(x))
-    x = F.tanh(self.d2(x))
-    x = F.tanh(self.d3(x))
+    x = F.relu(self.d1(x))
+    x = F.relu(self.d2(x))
+    x = F.relu(self.d3(x))
 
     x = x.view(-1, 128)
     x = self.last(x)
@@ -101,4 +101,4 @@ if __name__ == "__main__":
       num_loss += 1
 
     print("%3d: %f" % (epoch, all_loss/num_loss))
-    
+    torch.save(model.state_dict(), "nets/value.pth") 
