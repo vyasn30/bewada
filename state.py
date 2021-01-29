@@ -1,5 +1,6 @@
 import chess
 import numpy as np
+from train import Net
 
 class State(object):
     def __init__(self, board = None):
@@ -64,10 +65,4 @@ class State(object):
     def edges(self):
         return list(self.board.legal_moves)
 
-    def value(self):
-        return 1
 
-
-if __name__ == "__main__":
-    s = State()
-    print(s.serialize())
